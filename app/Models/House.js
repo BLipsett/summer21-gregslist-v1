@@ -1,5 +1,6 @@
 export class House {
   constructor(description, size, bedrooms, bathrooms, acreage, price, img) {
+    // (this.id = id),
     (this.description = description),
       (this.size = size),
       (this.bedrooms = bedrooms),
