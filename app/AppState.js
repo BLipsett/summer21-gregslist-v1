@@ -6,15 +6,10 @@ import { Bicycle } from "./Models/Bicycles.js";
 
 class AppState extends EventEmitter {
   /** @type {Car[]} */
-  cars = [
-    new Car("Honda", "Accord", 10000, "rusty", 500, "//placehold.it/500x500"),
-  ];
+  cars = [];
 
   /** @type {House[]} */
-  houses = [
-    new House("New-Englander", 1500, 2, 2, 2, 275000, "//placehold.it/500x500"),
-    new House("Mid-Century", 1500, 2, 2, 2, 275000, "//placehold.it/500x500"),
-  ];
+  houses = [];
 
   /** @type {Bicycle[]} */
   bicycles = [new Bicycle("Mountain", "Specialized", 800, "goes fast")];

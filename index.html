@@ -92,6 +92,16 @@
                 />
               </div>
               <div class="form-group">
+                <label for="year" class="sr-only">Year:</label>
+                <input
+                  class="form-control"
+                  placeholder="year"
+                  type="number"
+                  min="0"
+                  id="year"
+                  required
+                />
+                <div class="form-group">
                 <label for="price" class="sr-only">Price:</label>
                 <input
                   class="form-control"
@@ -103,30 +113,21 @@
                 />
               </div>
               <div class="form-group">
-                <label for="color" class="sr-only">Color:</label>
+                <label for="description" class="sr-only">Description:</label>
                 <input
                   class="form-control"
-                  placeholder="color"
-                  type="color"
-                  id="color"
+                  placeholder="description"
+                  type="text-area"
+                  id="description"
                 />
               </div>
               <div class="form-group">
-                <label for="miles" class="sr-only">miles:</label>
+                <label for="imgUrl" class="sr-only">img:</label>
                 <input
                   class="form-control"
-                  placeholder="miles"
-                  type="number"
-                  id="miles"
-                />
-              </div>
-              <div class="form-group">
-                <label for="img" class="sr-only">img:</label>
-                <input
-                  class="form-control"
-                  placeholder="img"
+                  placeholder="imgUrl"
                   type="text"
-                  id="img"
+                  id="imgUrl"
                 />
               </div>
               <button type="submit">submit form</button>
@@ -140,12 +141,12 @@
               onsubmit="app.housesController.addHouse(event)"
             >
               <div class="form-group">
-                <label for="img" class="sr-only">img:</label>
+                <label for="imgUrl" class="sr-only">img:</label>
                 <input
                   class="form-control"
-                  placeholder="img"
+                  placeholder="imgUrl"
                   type="text"
-                  id="img"
+                  id="imgUrl"
                 />
               </div>
               <div class="form-group">
@@ -176,21 +177,21 @@
                 />
               </div>
               <div class="form-group">
-                <label for="square-footage" class="sr-only">acres</label>
+                <label for="levels" class="sr-only">levels</label>
                 <input
                   class="form-control"
-                  placeholder="square-footage"
+                  placeholder="levels"
                   type="number"
-                  id="squareFootage"
+                  id="levels"
                 />
               </div>
               <div class="form-group">
-                <label for="acres" class="sr-only">acres</label>
+                <label for="year" class="sr-only">year</label>
                 <input
                   class="form-control"
-                  placeholder="acres"
+                  placeholder="year"
                   type="number"
-                  id="acres"
+                  id="year"
                 />
               </div>
               <div class="form-group">
@@ -257,7 +258,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>

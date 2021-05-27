@@ -4,32 +4,12 @@ import { carsService } from "../Services/CarsService.js";
 export class CarsController {
   constructor() {
     ProxyState.on("cars", this.drawCars);
-    this.drawCars();
+    carsService.getCars();
   }
   drawCars() {
     let template = "";
-    ProxyState.cars.forEach((car) => {
-      template += /*html */ `
-            <div class="col-lg-4 listing my-3">
-                <div class="card">
-                    <div> 
-                        <img src="${car.img}" height="200" /> 
-                    </div>
-                    <div class="card-body">
-                        <p>
-                            <b>${car.make} ${car.model}</b>
-                        </p>
-                        <p>
-                            <em>${car.price}</em>
-                        </p>
-                    </div>
-                </div>
-                <button class="fab" onclick="app.carsController.toggleForm()">
-              +
-            </button>
-            </div>
-            `;
-    });
+    ProxyState.cars.forEach((car) => (template += car.carsTemplate));
+
     document.getElementById("listings").innerHTML = template;
     document.getElementById("house-form").classList.add("d-none");
   }
@@ -41,15 +21,20 @@ export class CarsController {
     let formData = {
       make: form.make.value,
       model: form.model.value,
+      year: form.year.value,
       price: form.price.value,
-      color: form.color.value,
-      img: form.img.value,
-      miles: form.miles.value,
+      description: form.description.value,
+      imgUrl: form.imgUrl.value,
     };
     console.log(formData);
     carsService.addCar(formData);
     form.reset();
     this.toggleForm();
+  }
+
+  deleteCar(id) {
+    console.log(id);
+    carsService.deleteCar(id);
   }
 
   toggleForm() {
